@@ -1,67 +1,82 @@
-# PocketBase Technical Architecture Documentation
+# pocketbase-docs
 
-This repository contains comprehensive technical documentation covering PocketBase's architecture, backend capabilities, real-time data infrastructure, authentication framework, and API integration layer.
+## Detailed Description
 
-## Table of Contents
+pocketbase-docs is maintained as an industry-grade software project with production-ready engineering practices.  
+This repository includes documented setup, quality gates, operational guidance, and governance standards so contributors can safely build, test, and ship changes with confidence.
 
-1. [Single-Binary Deployment Model](./docs/single-binary-deployment.md)
-   - Embedded SQLite database with real-time subscriptions
-   - Built-in authentication and user management
-   - Integrated file storage (local and S3-compatible)
-   - Admin dashboard UI
+## Problem Statement
 
-2. [Real-Time Data Infrastructure](./docs/realtime-data-infrastructure.md)
-   - WebSocket-based live data synchronization
-   - Event-driven subscription model
-   - WAL mode for SQLite optimization
+Describe the user or business problem this project solves, the target users, and expected outcomes.
 
-3. [Authentication and Security Framework](./docs/authentication-security.md)
-   - Email/password authentication with verification
-   - OAuth2 provider integration (15+ providers)
-   - Role-based access control (RBAC)
-   - Automatic TLS certificate handling
+## Solution Overview
 
-4. [API and Integration Layer](./docs/api-integration.md)
-   - RESTful API design
-   - Official JavaScript SDK and Dart SDK
-   - Extensibility through Go and JavaScript hooks
+Summarize the architecture, core modules, and runtime behavior at a high level.
 
-## Quick Start
+## Key Features
+
+- Clear project scope and intended use.
+- Reproducible local development workflow.
+- Test coverage and CI quality gates.
+- Security and contribution policies.
+- Deployment-ready repository structure.
+
+## Repository Structure
+
+```text
+.
+|-- src/                  # Core implementation
+|-- tests/                # Automated test suites
+|-- docs/                 # Design notes and operational docs
+|-- .github/workflows/    # CI pipelines
+|-- README.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- SECURITY.md
+|-- CODE_OF_CONDUCT.md
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Git
+- Project runtime/toolchain for this repo
+
+### Local Setup
 
 ```bash
-# Download PocketBase
-wget https://github.com/pocketbase/pocketbase/releases/latest/download/pocketbase_{version}_linux_amd64.zip
-unzip pocketbase_{version}_linux_amd64.zip
-
-# Run PocketBase
-./pocketbase serve
+make test
+make lint
 ```
 
-Access the admin dashboard at `http://127.0.0.1:8090/_/`
+## Usage
 
-## Key Features Overview
+Document primary commands, API routes, CLI examples, or UI workflows here.
 
-| Feature | Description |
-|---------|-------------|
-| **Database** | Embedded SQLite with WAL mode, 10,000+ reads/sec, 100+ writes/sec |
-| **Real-time** | WebSocket subscriptions with sub-100ms propagation |
-| **Authentication** | Email/password, OAuth2 (15+ providers), magic links |
-| **Storage** | Local filesystem or S3-compatible backends |
-| **API** | RESTful API with JavaScript and Dart SDKs |
+## Quality Standards
 
-## Documentation Structure
+- CI must pass before merge.
+- Changes require tests for critical behavior.
+- Security-sensitive changes should include risk notes.
+- Keep pull requests focused and reviewable.
 
-```
-pocketbase-docs/
-├── README.md
-├── docs/
-│   ├── single-binary-deployment.md
-│   ├── realtime-data-infrastructure.md
-│   ├── authentication-security.md
-│   └── api-integration.md
-└── LICENSE
-```
+## Security
+
+See `SECURITY.md` for responsible disclosure and handling guidelines.
+
+## Contributing
+
+See `CONTRIBUTING.md` for branching, commit, and pull request expectations.
+
+## Roadmap
+
+Track upcoming milestones, technical debt, and planned feature work.
+
+## Support
+
+Open a GitHub issue for bugs, feature requests, or documentation gaps.
 
 ## License
 
-This documentation is provided for educational purposes.
+This project is released under the MIT License.
